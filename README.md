@@ -1,5 +1,5 @@
 # About this project
-This project showcases demand forecasting using a gradient boosting machine learning algorithm. Demand forecasting is crucial for resource allocation analytics, pricing, and revenue optimisation.
+This project showcases demand forecasting using a gradient boosting machine learning algorithm (XGBoost). Demand forecasting is crucial for resource allocation analytics, pricing, and revenue optimisation.
 
 The dataset used for this project are taken from the 2023-2024 data of the NYC yellow taxi data (https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
 
@@ -69,19 +69,18 @@ Running
 ```
 bash
 python3 predict.py "2025-05-11 19:00:00"
-
 ```
 will output
 ```
 Predicted trip volume (taxi demand) is: 5134.99
 ```
 
-## Limitation
+## Limitation on the predictions
 This solution is best suited for short-term time-forecasting (with 1 a year time horizon), as the ML model was trained on a 2 year data with lag features of (1 day, 1 week, and 1 year - following the seasonalities).
 
 ## Production (MLOps) considerations and further developments
-While I have provided a simple unit test (`tests/test_predict.py`) and a simple CI pipeline (for now), to turn this exercise for full-blown production workloads, I would:
+While I have provided a simple unit test (`tests/test_predict.py`) and a simple CI/CD pipeline (for now), to turn this exercise for full-blown production workloads, I would:
 1. Further refine the models by performing a more detailed hyperparameter search and explore more interaction terms (such as combining weather and the day of the week and/or holiday season and geographic area).
 2. Add automated ML model retraining as new data arrives, and a data drift monitoring feature. The data drift monitoring will help both the data scientists and stakeholders, ensuring that the model adapts to seasonal trends or fluctuating taxi demand.
-3. Containerise the ML prediction application (using Docker, for example) for a scalable and/or cloud deployment.   
-4. Consider using scalable data handling (e.g., Dask, Spark for data wrangling, Airflow for data orchestration) if the data volume warrants it.
+3. Consider using scalable data handling (e.g., Dask, Spark for data wrangling, Airflow for data orchestration) if the data volume warrants it.
+4. Turn the prediction script into a backend API (using FastAPI/Flask) and then add a frontend (TypeScript/React) for user friendliness.
