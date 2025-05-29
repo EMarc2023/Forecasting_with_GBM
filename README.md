@@ -79,7 +79,7 @@ Predicted trip volume (taxi demand) is: 5134.99
 ## Limitation
 This solution is best suited for short-term time-forecasting (with 1 a year time horizon), as the ML model was trained on a 2 year data with lag features of (1 day, 1 week, and 1 year - following the seasonalities).
 
-## Production considerations and further developments
+## Production (MLOps) considerations and further developments
 While I have provided a simple unit test (`tests/test_predict.py`) and a simple CI pipeline (for now), to turn this exercise for full-blown production workloads, I would:
 1. Further refine the models by performing a more detailed hyperparameter search and explore more interaction terms (such as combining weather and the day of the week and/or holiday season and geographic area).
 2. Add automated ML model retraining as new data arrives, and a data drift monitoring feature. The data drift monitoring will help both the data scientists and stakeholders, ensuring that the model adapts to seasonal trends or fluctuating taxi demand.
