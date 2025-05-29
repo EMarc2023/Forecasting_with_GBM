@@ -6,6 +6,9 @@ The dataset used for this project are taken from the 2023-2024 data of the NYC y
 ## Executive summary
 This project tackles demand forecasting for the NYC yellow taxis. In this project, I demonstrate how a simple machine learning operations (MLOps) pipeline can help us generate valuable insights and help stakeholders make effective and responsible business decisions. 
 
+## Build status
+[![Run Predict Script Tests](https://github.com/EMarc2023/Forecasting_with_GBM/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/EMarc2023/Forecasting_with_GBM/actions/workflows/ci_cd.yml)
+
 ## Solution design
 ### For the Jupyter notebook:
 ```mermaid
