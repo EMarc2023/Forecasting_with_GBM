@@ -1,7 +1,7 @@
 # About this project
-This project showcases demand forecasting using a gradient boosting machine learning algorithm (XGBoost). Demand forecasting is crucial for resource allocation analytics, pricing, and revenue optimisation.
+This project showcases time-series demand forecasting using a gradient boosting machine learning algorithm (XGBoost). Demand forecasting is crucial for resource allocation analytics, pricing, and revenue optimisation.
 
-The dataset used for this project are taken from the 2023-2024 data of the NYC yellow taxi data (https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
+The dataset used for this project is taken from the 2023-2024 data of the NYC yellow taxi data (https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
 
 ## Executive summary
 This project tackles demand forecasting for the NYC yellow taxis. In this project, I demonstrate how a simple machine learning operations (MLOps) pipeline can help us generate valuable insights and help stakeholders make effective and responsible business decisions. 
@@ -29,14 +29,14 @@ flowchart TD
 ```
 
 ### For `predict.py`
-This script will load the best-performing model and lets users forecast taxi demand by providing a date and hour (see How to run the notebook and prediction" for details).
+This script will load the best-performing model and lets users forecast taxi demand by providing a date and hour (see "How to run the notebook and prediction" for details).
 
 ## Business insights and conclusions:
 1. Time-series data, such as illustrated by the NYC taxi data, follows strong multi-seasonal trends. In the case of the NYC yellow taxi data, the seasonalities are daily, monthly, and yearly.
 
 2. Understanding these seasonalities is crucial for businesses to optimise resource allocation and implement dynamic pricing strategies to maximise revenue during high-demand periods.
 
-3. Feature importance helps businesses identify the strongest features that contribute to the observed data (e.g, in this case study, the taxi demand).
+3. Feature importance helps businesses identify the strongest features that contribute to the observed data (e.g., in this case study, the taxi demand).
 
 4. By including seasonality (via lag terms), we can build a higher-performing ML model for forecasting. As demonstrated in the Jupyter notebook, including the lag terms reduces the root mean square error (RMSE) by around 10% compared to the baseline model.
 
