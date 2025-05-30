@@ -9,6 +9,12 @@ This project tackles demand forecasting for the NYC yellow taxis. In this projec
 ## Build status
 [![Run Predict Script Tests](https://github.com/EMarc2023/Forecasting_with_GBM/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/EMarc2023/Forecasting_with_GBM/actions/workflows/ci_cd.yml)
 
+
+## Frontend UI
+The frontend UI is available on https://emarc2023-forecasting-with-gbm-app-xqdmln.streamlit.app/
+
+Detailed information on the frontend UI is provided below under the subsection "Running the prediction script (via Streamlit UI - see screenshot)".
+
 ## Solution design
 ### For the Jupyter notebook:
 ```mermaid
