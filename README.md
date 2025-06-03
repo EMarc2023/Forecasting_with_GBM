@@ -128,3 +128,6 @@ While I have provided a simple unit test (`tests/test_predict.py`) and a simple 
 2. Add automated ML model retraining as new data arrives, and a data drift monitoring feature. The data drift monitoring will help both the data scientists and stakeholders, ensuring that the model adapts to seasonal trends or fluctuating taxi demand.
 3. Consider using scalable data handling (e.g., Dask, Spark for data wrangling, Airflow for data orchestration) if the data volume warrants it.
 4. Turn the prediction script into a backend API (using FastAPI/Flask) and then add a frontend (TypeScript/React) for better modularity and scalability.
+
+## License
+This project is licensed under the terms of the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
