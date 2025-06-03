@@ -57,9 +57,22 @@ pip install -r requirements.txt
 ### Running the notebook
 To run the notebook, open "Forecasting-NYC-yellow-taxi.ipynb" on a Jupyter interface and run all cells.
 
-### Running the prediction script (via Streamlit UI - see screenshot)
+#### Running the prediction script (via Streamlit UI - see screenshot)
 Note: A screenshot of the Streamlit UI is available in the ```screenshot``` folder of this repository. 
 
+#### Running the predict script via Streamlit online
+Go to the Streamlit link for this app: https://emarc2023-forecasting-with-gbm-app-xqdmln.streamlit.app/
+
+Then, input the date and time. For example, entering 
+```
+2025-05-11 19:00:00
+```
+will output
+```
+Predicted trip volume (taxi demand) is: 5134.99
+```
+
+#### Running the predict script via Streamlit locally
 To run the prediction via the Streamlit UI, first execute the following:
 ```
 bash
