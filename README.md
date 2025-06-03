@@ -54,10 +54,10 @@ pip install -r requirements.txt
 ```
 
 ### Step 3
-### Running the notebook
-To run the notebook, open "Forecasting-NYC-yellow-taxi.ipynb" on a Jupyter interface and run all cells.
+### Running the Jupyter notebook
+To run the Jupyter notebook, open "Forecasting-NYC-yellow-taxi.ipynb" on a Jupyter interface and run all cells.
 
-#### Running the prediction script (via Streamlit UI - see screenshot)
+### Running the prediction script (via Streamlit UI - see screenshot)
 Note: A screenshot of the Streamlit UI is available in the ```screenshot``` folder of this repository. 
 
 #### Running the predict script via Streamlit online
