@@ -1,7 +1,9 @@
 # About this project
-This project showcases time-series demand forecasting using a gradient boosting machine learning algorithm (XGBoost). Demand forecasting is crucial for resource allocation analytics, pricing, and revenue optimisation.
+This project showcases time-series demand forecasting using a gradient boosting machine learning algorithm (XGBoost). Demand forecasting is crucial for energy market analytics, resource allocation analytics, pricing, and revenue optimisation.
 
-The dataset used for this project is taken from the 2023-2024 data of the NYC yellow taxi data (https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
+For the illustrative purpose of this project, I am using a public domain, real-world time-series dataset that has strong seasonalities and has multiple independent variables.
+
+While the dataset used for this project is taken from the 2023-2024 data of the NYC yellow taxi data (https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), the data processing and machine learning techniques are readily adaptable to other time-series forecasting problems.
 
 ## Executive summary
 This project tackles demand forecasting for the NYC yellow taxis. In this project, I demonstrate how a simple machine learning operations (MLOps) pipeline can help us generate valuable insights and help stakeholders make effective and responsible business decisions. 
