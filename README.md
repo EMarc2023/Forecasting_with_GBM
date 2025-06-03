@@ -60,7 +60,7 @@ To run the Jupyter notebook, open "Forecasting-NYC-yellow-taxi.ipynb" on a Jupyt
 ### Running the prediction script (via Streamlit UI - see screenshot)
 Note: A screenshot of the Streamlit UI is available in the ```screenshot``` folder of this repository. 
 
-#### Running the predict script via Streamlit online
+#### Running the prediction script via Streamlit online
 Go to the Streamlit link for this app: https://emarc2023-forecasting-with-gbm-app-xqdmln.streamlit.app/
 
 Then, input the date and time. For example, entering 
@@ -72,7 +72,7 @@ will output
 Predicted trip volume (taxi demand) is: 5134.99
 ```
 
-#### Running the predict script via Streamlit locally
+#### Running the prediction script via Streamlit locally
 To run the prediction via the Streamlit UI, first execute the following:
 ```
 bash
