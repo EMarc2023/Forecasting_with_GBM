@@ -11,7 +11,6 @@ This project tackles demand forecasting for the NYC yellow taxis. In this projec
 ## Build status
 [![Run Predict Script Tests](https://github.com/EMarc2023/Forecasting_with_GBM/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/EMarc2023/Forecasting_with_GBM/actions/workflows/ci_cd.yml)
 
-
 ## Frontend UI
 The frontend UI is available on https://emarc2023-forecasting-with-gbm-app-xqdmln.streamlit.app/
 
@@ -58,7 +57,7 @@ pip install -r requirements.txt
 To run the Jupyter notebook, open "Forecasting-NYC-yellow-taxi.ipynb" on a Jupyter interface and run all cells.
 
 ### Running the prediction script (via Streamlit UI - see screenshot)
-Note: A screenshot of the Streamlit UI is available in the ```screenshot``` folder of this repository. 
+Note: A screenshot of the Streamlit UI is available in the ```screenshots``` folder of this repository. 
 
 #### Running the prediction script via Streamlit online
 Go to the Streamlit link for this app: https://emarc2023-forecasting-with-gbm-app-xqdmln.streamlit.app/
@@ -108,7 +107,7 @@ will output
 Predicted trip volume (taxi demand) is: 5134.99
 ```
 
-### Explainable AI (XAI) and Feature Importance
+## Explainable AI (XAI) and Feature Importance
 Explainable AI (XAI) techniques are leveraged to provide transparency and trust in the XGBoost forecasting model by interpreting how features influence predictions:
 
 1. XGBoost’s native feature importance (Gain): This fast, global metric quantifies the contribution of each feature based on the improvement in model accuracy at splits, giving an overview of what the model relies on during training.
@@ -130,11 +129,14 @@ The agreement among these diverse explainability approaches confirms that the ML
 This solution is best suited for short-term time-forecasting (with 1 a year time horizon), as the ML model was trained on a 2 year data with lag features of (1 day, 1 week, and 1 year - following the seasonalities).
 
 ## Production (MLOps) considerations and further developments
-While I have provided a simple unit test (`tests/test_predict.py`) and a simple CI/CD pipeline (for now), to turn this exercise for full-blown production workloads, I would:
+While I have provided a unit test (`tests/test_predict.py`) and a foundational CI/CD pipeline (for now), to turn this exercise for full-blown production workloads, I would:
 1. Further refine the models by performing a more detailed hyperparameter search and explore more interaction terms (such as combining weather and the day of the week and/or holiday season and geographic area).
 2. Add automated ML model retraining as new data arrives, and a data drift monitoring feature. The data drift monitoring will help both the data scientists and stakeholders, ensuring that the model adapts to seasonal trends or fluctuating taxi demand.
 3. Consider using scalable data handling (e.g., Dask, Spark for data wrangling, Airflow for data orchestration) if the data volume warrants it.
 4. Turn the prediction script into a backend API (using FastAPI/Flask) and then add a frontend (TypeScript/React) for better modularity and scalability.
+
+## Additional info: Taxi Demand Dashboard (Power BI)
+I have also added a PowerBI dashboard `NYC_taxi_yellow_taxi_PowerBI_dashboard.pbix` to show the key metrics (on the number of passengers, trip volume, fares) and general trends of the taxi demand and supplement the above ML modelling.
 
 ## License
 This project is licensed under the terms of the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
