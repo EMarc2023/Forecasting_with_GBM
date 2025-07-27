@@ -108,6 +108,19 @@ will output
 Predicted trip volume (taxi demand) is: 5134.99
 ```
 
+### Explainable AI (XAI) and Feature Importance
+In this project, explainable AI (XAI) techniques are leveraged to provide transparency and trust in the XGBoost forecasting model by interpreting how features influence predictions:
+
+1. XGBoost’s native feature importance (Gain): This fast, global metric quantifies the contribution of each feature based on the improvement in model accuracy at splits, giving an overview of what the model relies on during training.
+
+2. SHAP (SHapley Additive exPlanations): A rigorous game-theoretic method that breaks down individual predictions to show how each feature contributes locally and aggregates to global importance, enhancing interpretability and accountability. SHAP is model-agnostic.
+
+3. LIME (Local Interpretable Model-agnostic Explanations): A local surrogate modeling approach that explains single predictions by approximating the model’s behavior near a given data point, supporting explainability at a granular level.
+
+Across all three methods, trip distance consistently stands out as the most important feature. Temporal variables like lag_24 (data from 24 hours prior), hour, and day of week also play significant roles, reflecting the strong seasonal and temporal dependencies within the data.
+
+The agreement among these diverse explainability approaches confirms that the model is capturing stable, meaningful patterns, making the forecasting results both reliable and transparent for business decision-making.
+
 ## Business insights:
 1. Time-series data, such as illustrated by the NYC taxi data, follows strong multi-seasonal trends. In the case of the NYC yellow taxi data, the seasonalities are daily, monthly, and yearly.
 
