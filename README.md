@@ -69,7 +69,7 @@ Then, input the date and time. For example, entering
 ```
 will output
 ```
-Predicted trip volume (taxi demand) is: 5134.99
+Predicted trip volume is: 5134.99
 ```
 
 #### Running the prediction script via Streamlit locally
@@ -87,7 +87,7 @@ For example, entering
 ```
 will output
 ```
-Predicted trip volume (taxi demand) is: 5134.99
+Predicted trip volume is: 5134.99
 ```
 
 ### Running the prediction script (100% via CLI)
