@@ -136,7 +136,7 @@ While I have provided a unit test (`tests/test_predict.py`) and a foundational C
 4. Turn the prediction script into a backend API (using FastAPI/Flask) and then add a frontend (TypeScript/React) for better modularity and scalability.
 
 ## Additional info: Taxi Demand Dashboard (Power BI)
-I have also added a PowerBI dashboard `NYC_taxi_yellow_taxi_PowerBI_dashboard.pbix` to show the key metrics (on the number of passengers, trip volume, fares) and general trends of the taxi demand and supplement the above ML modelling.
+I have also added a PowerBI dashboard `NYC_taxi_yellow_taxi_PowerBI_dashboard.pbix` (which is based on `cleaned_hourly_taxi_data.csv`) to show the key metrics (on the number of passengers, trip volume, fares) and general trends of the taxi demand and supplement the above ML modelling.
 
 ## License
 This project is licensed under the terms of the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
