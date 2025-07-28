@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 @st.cache_resource
 def load_resources():
@@ -10,11 +10,15 @@ def load_resources():
     best_df = pd.read_csv("best_df.csv")
     best_df["pickup_hour"] = pd.to_datetime(best_df["pickup_hour"])
     model = joblib.load("best_model_reloaded.joblib")
-    median_passenger_count = best_df["passenger_count"].median()
-    median_trip_distance = best_df["trip_distance"].median()
-    return model, best_df, median_passenger_count, median_trip_distance
+    average_passenger_count = best_df["passenger_count"].mean()
+    average_trip_distance = best_df["trip_distance"].mean()
+    average_fare_amount = best_df["fare_amount"].mean()
+    average_total_amount = best_df["total_amount"].mean()
+    return model, best_df, average_passenger_count, average_trip_distance, \
+        average_fare_amount, average_total_amount
 
-model, best_df, median_passenger_count, median_trip_distance = load_resources()
+model, best_df, average_passenger_count, average_trip_distance, average_fare_amount, \
+    average_total_amount = load_resources()
 
 def prepare_input(datetime_string):
     """Prepare input DataFrame for prediction"""
@@ -24,8 +28,10 @@ def prepare_input(datetime_string):
         return None
 
     features = {
-        "trip_distance": median_trip_distance,
-        "passenger_count": int(median_passenger_count),
+        "trip_distance": average_trip_distance,
+        "fare_amount": average_fare_amount,
+        "total_amount": average_total_amount,
+        "passenger_count": int(average_passenger_count),
         "year": np.int32(date_time.year),
         "month": np.int32(date_time.month),
         "day": np.int32(date_time.day),

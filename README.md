@@ -64,11 +64,11 @@ Go to the Streamlit link for this app: https://emarc2023-forecasting-with-gbm-ap
 
 Then, input the date and time. For example, entering 
 ```
-2025-05-11 19:00:00
+2025-07-01 19:00:00
 ```
 will output
 ```
-Predicted trip volume is: 5134.99
+Predicted trip volume is: 4961.59
 ```
 
 #### Running the prediction script via Streamlit locally
@@ -82,11 +82,11 @@ The Streamlit UI will then load on the browser. Then, enter the date and time fo
 
 For example, entering 
 ```
-2025-05-11 19:00:00
+2025-07-01 19:00:00
 ```
 will output
 ```
-Predicted trip volume is: 5134.99
+Predicted trip volume is: 4961.59
 ```
 
 ### Running the prediction script (100% via CLI)
@@ -100,11 +100,11 @@ Example:
 Running
 ```
 bash
-python3 predict.py "2025-05-11 19:00:00"
+python3 predict.py "2025-07-01 19:00:00"
 ```
 will output
 ```
-Predicted trip volume (taxi demand) is: 5134.99
+Predicted trip volume (taxi demand) is: 4961.59
 ```
 
 ## Explainable AI (XAI) and Feature Importance
@@ -114,7 +114,7 @@ Explainable AI (XAI) techniques are leveraged to provide transparency and trust 
 2. SHAP (SHapley Additive exPlanations): A rigourous game-theoretic method that breaks down individual predictions to show how each feature contributes locally and aggregates to global importance, enhancing interpretability and accountability. SHAP is model-agnostic.
 3. LIME (Local Interpretable Model-agnostic Explanations): A local surrogate modelling approach that explains single predictions by approximating the model’s behaviour near a given data point, supporting explainability at a granular level.
 
-Across all three methods, trip distance consistently stands out as the most important feature. Temporal variables like lag_24 (data from 24 hours prior), hour, and day of week also play significant roles, reflecting the strong seasonal and temporal dependencies within the data.
+Across all three methods, hour (i.e., the trip hour) consistently stands out as the most important feature. Temporal variables like lag_24 (data from 24 hours prior), day of the week, fare amount, and passenger count also play significant roles, reflecting the strong seasonal and temporal dependencies within the data.
 
 The agreement among these diverse explainability approaches confirms that the ML model is capturing stable, meaningful patterns, making the forecasting results both reliable and transparent for business decision-making.
 

@@ -7,7 +7,7 @@ import sys
 
 
 def prepare_input(
-    datetime_string, best_df, median_passenger_count, median_trip_distance
+    datetime_string, best_df, average_fare_amount, average_total_amount, average_passenger_count, average_trip_distance
 ):
     """The user input is a datetime_string YYYY-MM-DD HH:MM:SS.
     This function adds the additional features (to match the training data) to the user input.
@@ -21,8 +21,10 @@ def prepare_input(
         return None
 
     features = {
-        "trip_distance": median_trip_distance,
-        "passenger_count": int(median_passenger_count),
+        "trip_distance": average_trip_distance,
+        "fare_amount": average_fare_amount,
+        "total_amount": average_total_amount,
+        "passenger_count": int(average_passenger_count),
         "year": np.int32(date_time.year),
         "month": np.int32(date_time.month),
         "day": np.int32(date_time.day),
@@ -79,12 +81,15 @@ if __name__ == "__main__":
 
         best_model = joblib.load("best_model_reloaded.joblib")
 
-        median_passenger_count = best_df["passenger_count"].median()
-        median_trip_distance = best_df["trip_distance"].median()
+        average_passenger_count = best_df["passenger_count"].mean()
+        average_trip_distance = best_df["trip_distance"].mean()
+        average_fare_amount = best_df["fare_amount"].mean()
+        average_total_amount = best_df["total_amount"].mean()
 
         input_df = prepare_input(
-            datetime_string, best_df, median_passenger_count, median_trip_distance
-        )
+            datetime_string, best_df, average_fare_amount, 
+            average_total_amount, average_passenger_count, 
+            average_trip_distance)
 
         if input_df is not None:
             prediction = best_model.predict(input_df)
